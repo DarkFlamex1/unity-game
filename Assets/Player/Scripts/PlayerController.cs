@@ -21,6 +21,6 @@ public class PlayerController : MonoBehaviour {
 		float moveVertical = Input.GetAxis ("Vertical");
 
 		Vector3 force = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-		rb.AddForce (force*speed);
+		rb.transform.Translate (force * speed);
 	}
 }
