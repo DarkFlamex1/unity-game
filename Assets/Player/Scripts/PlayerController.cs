@@ -4,7 +4,9 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
+	public float jumpSpeed;
 	private Rigidbody rb;
+	public bool jump = false;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -20,8 +22,19 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 		float moveUp = Input.GetAxis ("Jump");
+		float sprint = Input.GetAxis ("Sprint")+1;
+		if (!jump && moveUp > 0) {
+			Vector3 jumpForce = new Vector3 (0.0f, moveUp, 0.0f);
+			rb.AddForce (jumpForce*jumpSpeed);
+			jump = true;
+		}
 
-		Vector3 force = new Vector3 (moveHorizontal, moveUp, moveVertical);
-		rb.transform.Translate (force * speed);
+		if (Mathf.Abs (rb.velocity.y) < 0.05f) {
+			jump = false;
+		}
+			
+
+		Vector3 force = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		rb.transform.Translate (force * (speed*sprint));
 	}
 }
