@@ -5,8 +5,8 @@
 #####The tower defense game where you are the attacker.
 #####This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
-##Current Status
-![alt tag](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=develop)
+####Current Status
+[![Build Status](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=develop)](https://travis-ci.org/FewdpewGames/unity-game)
 
 ####[Click here](https://github.com/BenCuan/unity-game/wiki) to check out the Wiki
 ####[Click here](https://github.com/BenCuan/unity-game/wiki/getting-started) if you need help getting started
