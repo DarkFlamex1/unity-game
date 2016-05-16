@@ -5,15 +5,13 @@ public class RoomLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //Sel-Explanotory
         PhotonView photonView = PhotonView.Get(this);
+        //We use All Buffered to replay for new clients
         photonView.RPC("SpawnPlayer", PhotonTargets.AllBuffered);
     }
 	
-	// Update is called once per frame
-	void Update () {
-	    
-	}
-
+    //We use this to show it is RPC
     [PunRPC]
     public void SpawnPlayer() {
         Debug.Log("Player Connected");
